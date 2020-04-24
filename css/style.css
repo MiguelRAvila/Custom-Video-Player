@@ -18,7 +18,7 @@ h1 {
 
 .screen {
   cursor: pointer;
-  width: 50%;
+  width: 65%;
   background-color: #000 !important;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -32,12 +32,31 @@ h1 {
   justify-content: center;
   align-items: center;
   padding: 10px;
+  width: 65%;
 }
 
 .controls .btn {
   border: 0;
   background: transparent;
   cursor: pointer;
+}
+
+.controls .fa-play {
+  color: #28a745;
+}
+.controls .fa-stop {
+  color: #dc3545;
+}
+.controls .fa-pause {
+  color: #2a6495;
+}
+.controls .timestamp {
+  color: #fff;
+  font-weight: bold;
+  margin-left: 10px;
+}
+.btn:focus {
+  outline: 0;
 }
 @media (max-width: 800px) {
   .screen,
