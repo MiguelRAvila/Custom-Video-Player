@@ -13,10 +13,15 @@ function toggleVideoStatus() {
   }
 }
 function updateIcon() {
-  return true;
+  if (video.paused) {
+    play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
+  } else {
+    play.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
+  }
 }
 function stopVideo() {
-  return true;
+  video.currentTime = 0;
+  video.pause();
 }
 
 // Update Progress and TimeStamp
