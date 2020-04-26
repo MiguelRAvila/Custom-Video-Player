@@ -26,7 +26,7 @@ function stopVideo() {
 
 // Update Progress and TimeStamp
 function updateProgress() {
-  return true;
+  progre.value = (video.currentTime / video.duration) * 100;
 }
 function setVideoProgress() {
   return true;
