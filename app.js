@@ -29,7 +29,7 @@ function updateProgress() {
   progre.value = (video.currentTime / video.duration) * 100;
 }
 function setVideoProgress() {
-  return true;
+  video.currentTime = (+progre.value * video.duration) / 100;
 }
 
 // Event Listeners
