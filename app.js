@@ -1,55 +1,55 @@
-const video = document.getElementById("video");
-const play = document.getElementById("play");
-const stop = document.getElementById("stop");
-const progre = document.getElementById("progress");
-const time = document.getElementById("timestapm");
+const video = document.getElementById('video');
+const play = document.getElementById('play');
+const stop = document.getElementById('stop');
+const progre = document.getElementById('progress');
+const time = document.getElementById('timestapm');
 
 // Play and Pause Video
 function toggleVideoStatus() {
-  if (video.paused) {
-    video.play();
-  } else {
-    video.pause();
-  }
+	if (video.paused) {
+		video.play();
+	} else {
+		video.pause();
+	}
 }
 function updateIcon() {
-  if (video.paused) {
-    play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
-  } else {
-    play.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
-  }
+	if (video.paused) {
+		play.innerHTML = '<i class="fa fa-play fa-2x"></i>';
+	} else {
+		play.innerHTML = '<i class="fa fa-pause fa-2x"></i>';
+	}
 }
 function stopVideo() {
-  video.currentTime = 0;
-  video.pause();
+	video.currentTime = 0;
+	video.pause();
 }
 
 // Update Progress and TimeStamp
 function updateProgress() {
-  progre.value = (video.currentTime / video.duration) * 100;
+	progre.value = video.currentTime / video.duration * 100;
 
-  let mins = Math.floor(video.currentTime / 60);
-  if (mins < 10) {
-    mins = "0" + String(mins);
-  }
+	let mins = Math.floor(video.currentTime / 60);
+	if (mins < 10) {
+		mins = '0' + String(mins);
+	}
 
-  let secs = Math.floor(video.currentTime % 60);
-  if (secs < 10) {
-    secs = "0" + String(secs);
-  }
+	let secs = Math.floor(video.currentTime % 60);
+	if (secs < 10) {
+		secs = '0' + String(secs);
+	}
 
-  timestapm.innerHTML = `${mins}:${secs}`;
+	timestapm.innerHTML = `${mins}:${secs}`;
 }
 function setVideoProgress() {
-  video.currentTime = (+progre.value * video.duration) / 100;
+	video.currentTime = +progre.value * video.duration / 100;
 }
 
 // Event Listeners
-video.addEventListener("click", toggleVideoStatus);
-video.addEventListener("pause", updateIcon);
-video.addEventListener("play", updateIcon);
-video.addEventListener("timeupdate", updateProgress);
+video.addEventListener('click', toggleVideoStatus);
+video.addEventListener('pause', updateIcon);
+video.addEventListener('play', updateIcon);
+video.addEventListener('timeupdate', updateProgress);
 
-play.addEventListener("click", toggleVideoStatus);
-stop.addEventListener("click", stopVideo);
-progre.addEventListener("change", setVideoProgress);
+play.addEventListener('click', toggleVideoStatus);
+stop.addEventListener('click', stopVideo);
+progre.addEventListener('change', setVideoProgress);
